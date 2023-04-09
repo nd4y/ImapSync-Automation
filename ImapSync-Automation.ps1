@@ -5,6 +5,7 @@ param (
     $ConfigFilePath             = "$PSScriptRoot\conf\ImapSync-Automation.conf",
     $WorkingDirectory           = $PSScriptRoot
 )
+Set-Variable -Name 'ScriptLogLevel' -Value $ScriptLogLevel -Scope 'Global'
 
 #region Import-Modules
 Import-Module "$ModulesDirPath\Write-Log"
@@ -61,7 +62,7 @@ try {
         $ScriptLogLevel                               = $using:ScriptLogLevel
         $LogFilePath                                  = $using:LogFilePath
         $ImapSyncParams                               = $using:ImapSyncParams
-        $ImapSyncLogDir                               = $using:ImapSyncLogDir
+        #$ImapSyncLogDir                               = $using:ImapSyncLogDir
         $WorkingDirectory                             = $using:WorkingDirectory
         #endregion Переносим функции и переменнные в блок -Parallel
 
